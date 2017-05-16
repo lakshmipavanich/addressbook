@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AdderessBook</title>
+		<h3>Addressbook</h3>
+		<link rel="stylesheet" href="app.css"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+		<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+
+  <div id="app">
+    <!--<pre>{{ $data | json }}</pre>-->
+     <ul>
+      <li v-for="contact in contacts">
+        {{ contact.firstName }}
+        {{contact.lastName}}
+        {{contact.email}}
+        {{contact.company}}
+        {{contact.home}}
+        {{contact.mobile}}
+        {{contact.address}}
+        {{contact.city}}
+        {{contact.state}}
+        {{contact.country}}
+      </li>
+    </ul>
+
+  </div>
+  <script >
+    new Vue({
+      el: '#app',
+      data: {
+        contacts: [
+        {firstName:'Siv',lastName:'ram',email:'siv@gmail.com',company:'',home:'1234359999',mobile:'123477777',address:'',city:'chennai',state:'TN',country:'india'},
+        {firstName:'Raj',lastName:'siv',email:'rajsiv@gmail.com',company:'',home:'865649999',mobile:'71234377',address:'',city:'chennai',state:'TN',country:'india'}
+        ]
+      }
+     });
+  </script>
+  </head>
+	<tbody>
+
+
+	<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading"><h5>New contact</h5></div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+
+            <div class="form-group">
+              <label for="firstName" class="col-sm-2 control-label">FirstName </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstName" placeholder="FirstName" v-model="Contacts">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName" class="col-sm-2 control-label">LastName </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastName" placeholder="LastName" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-2 control-label">Email </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="email" placeholder="Email" v-model="Contacts">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company" class="col-sm-2 control-label">Company </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="company" placeholder="Company" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="home" class="col-sm-2 control-label">Home </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="home" placeholder="0" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="mobile" class="col-sm-2 control-label">Mobile </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="mobile" placeholder="Mobile" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address" class="col-sm-2 control-label">Address </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="address" placeholder="Address" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="city" class="col-sm-2 control-label">City</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="city" placeholder="City" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="state" class="col-sm-2 control-label">State</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="state" placeholder="State" v-model="Contacts" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="country" class="col-sm-2 control-label">Country</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="country" placeholder="Country" v-model="Contacts" >
+              </div>
+            </div>
+          </form>
+        </div> <!-- panel body-->
+        <div class="panel-footer">
+          <button  class="btn btn-success btn-lg" @click="submit" >Save</button>
+          <span>  OR  </span>
+          <button  class="btn btn-danger btn-lg" @click="cancel">Cancel</button>
+        </div> <!-- panel footer-->
+      </div>
+    </div>
+</div>
+
+
+	</tbody>
+</html>
+
